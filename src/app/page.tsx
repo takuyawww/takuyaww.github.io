@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
     <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-[#181824] via-[#232946] to-[#1a1a2e] overflow-hidden">
