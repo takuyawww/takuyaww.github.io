@@ -6,17 +6,17 @@ import html from "remark-html";
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
 // シンプルなフロントマターパーサー
-function parseFrontMatter(content: string): { data: Record<string, any>; content: string } {
+function parseFrontMatter(content: string): { data: Record<string, string | string[]>; content: string } {
   const frontMatterRegex = /^---\s*\n([\s\S]*?)\n---\s*\n([\s\S]*)$/;
   const match = content.match(frontMatterRegex);
-  
+
   if (!match) {
     return { data: {}, content };
   }
 
   const frontMatter = match[1];
   const body = match[2];
-  const data: Record<string, any> = {};
+  const data: Record<string, string | string[]> = {};
 
   // YAML風のパース（シンプル版）
   frontMatter.split("\n").forEach((line) => {
