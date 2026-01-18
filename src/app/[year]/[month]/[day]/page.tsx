@@ -18,9 +18,9 @@ export async function generateStaticParams() {
 export default async function PostPage({
   params,
 }: {
-  params: { year: string; month: string; day: string };
+  params: Promise<{ year: string; month: string; day: string }>;
 }) {
-  const { year, month, day } = params;
+  const { year, month, day } = await params;
   
   const post = await getPostWithHtml(year, month, day);
 

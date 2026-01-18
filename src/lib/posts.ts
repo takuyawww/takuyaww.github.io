@@ -72,9 +72,9 @@ export function getAllPosts(): Post[] {
 
       return {
         date,
-        title: matterResult.data.title || "",
-        tags: matterResult.data.tags || [],
-        excerpt: matterResult.data.excerpt || extractExcerpt(matterResult.content),
+        title: (matterResult.data.title as string) || "",
+        tags: (matterResult.data.tags as string[]) || [],
+        excerpt: (matterResult.data.excerpt as string) || extractExcerpt(matterResult.content),
         content: matterResult.content,
       };
     });
@@ -103,9 +103,9 @@ export function getPostByDate(year: string, month: string, day: string): Post | 
 
   return {
     date,
-    title: matterResult.data.title || "",
-    tags: matterResult.data.tags || [],
-    excerpt: matterResult.data.excerpt || extractExcerpt(matterResult.content),
+    title: (matterResult.data.title as string) || "",
+    tags: (matterResult.data.tags as string[]) || [],
+    excerpt: (matterResult.data.excerpt as string) || extractExcerpt(matterResult.content),
     content: matterResult.content,
   };
 }
