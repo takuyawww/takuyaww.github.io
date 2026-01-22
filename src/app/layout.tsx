@@ -26,11 +26,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mainbg text-white`}
       >
         <div className="min-h-screen flex flex-col">
           <Header />
-          <main className="flex-1">
+          <main className="flex-1 max-w-3xl mx-auto px-6 sm:px-8 w-full">
             {children}
           </main>
         </div>

@@ -1,7 +1,10 @@
 import fs from "fs";
 import path from "path";
 import { remark } from "remark";
-import html from "remark-html";
+import remarkRehype from "remark-rehype";
+import rehypeHighlight from "rehype-highlight";
+import rehypeExternalLinks from "rehype-external-links";
+import rehypeStringify from "rehype-stringify";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -120,40 +123,54 @@ export async function getPostWithHtml(
     return null;
   }
 
-  // MarkdownをHTMLに変換
+  // MarkdownをHTMLに変換（シンタックスハイライト付き）
   const processedContent = await remark()
-    .use(html)
+    .use(remarkRehype)
+    .use(rehypeHighlight)
+    .use(rehypeExternalLinks, {
+      target: "_blank",
+      rel: ["noopener", "noreferrer"],
+      content: {
+        type: "element",
+        tagName: "svg",
+        properties: {
+          xmlns: "http://www.w3.org/2000/svg",
+          width: "12",
+          height: "12",
+          viewBox: "0 0 24 24",
+          fill: "none",
+          stroke: "currentColor",
+          strokeWidth: "2",
+          strokeLinecap: "round",
+          strokeLinejoin: "round",
+          style: "display: inline-block; margin-left: 4px; vertical-align: middle;",
+        },
+        children: [
+          {
+            type: "element",
+            tagName: "path",
+            properties: { d: "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" },
+            children: [],
+          },
+          {
+            type: "element",
+            tagName: "polyline",
+            properties: { points: "15 3 21 3 21 9" },
+            children: [],
+          },
+          {
+            type: "element",
+            tagName: "line",
+            properties: { x1: "10", y1: "14", x2: "21", y2: "3" },
+            children: [],
+          },
+        ],
+      },
+    })
+    .use(rehypeStringify)
     .process(post.content);
-  
-  let contentHtml = processedContent.toString();
-  
-  // コードブロックにシンタックスハイライトを追加（言語指定がある場合）
-  contentHtml = contentHtml.replace(
-    /<pre><code class="language-(\w+)">([\s\S]*?)<\/code><\/pre>/g,
-    (match, lang, code) => {
-      const escapedCode = code
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-      return `<pre class="hljs"><code class="language-${lang}">${escapedCode}</code></pre>`;
-    }
-  );
-  
-  // 言語指定がないコードブロック
-  contentHtml = contentHtml.replace(
-    /<pre><code>([\s\S]*?)<\/code><\/pre>/g,
-    (match, code) => {
-      const escapedCode = code
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#039;');
-      return `<pre class="hljs"><code>${escapedCode}</code></pre>`;
-    }
-  );
+
+  const contentHtml = processedContent.toString();
 
   return {
     ...post,
