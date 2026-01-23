@@ -24,22 +24,37 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Skills</h2>
-          <div className="space-y-3 text-white/70">
+          <div className="space-y-3">
             <div>
-              <h3 className="text-sm text-white/50 mb-1">Languages</h3>
-              <p>Go / Ruby / TypeScript / JavaScript</p>
+              <h3 className="text-sm text-white/50 mb-2">Languages</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Go</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Ruby</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">TypeScript</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">JavaScript</span>
+              </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-1">Frameworks</h3>
-              <p>Ruby on Rails / React</p>
+              <h3 className="text-sm text-white/50 mb-2">Frameworks</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Ruby on Rails</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">React</span>
+              </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-1">Cloud / Infrastructure</h3>
-              <p>AWS / Kubernetes / Terraform</p>
+              <h3 className="text-sm text-white/50 mb-2">Cloud / Infrastructure</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">AWS</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Kubernetes</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Terraform</span>
+              </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-1">Databases</h3>
-              <p>MySQL / PostgreSQL</p>
+              <h3 className="text-sm text-white/50 mb-2">Databases</h3>
+              <div className="flex flex-wrap gap-2">
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">MySQL</span>
+                <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">PostgreSQL</span>
+              </div>
             </div>
           </div>
         </section>
