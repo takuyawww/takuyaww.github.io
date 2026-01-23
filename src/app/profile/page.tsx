@@ -68,6 +68,28 @@ export default function AboutPage() {
         </section>
 
         <section>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Work Experience</h2>
+          <div className="space-y-4">
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                <a
+                  href="https://stmn.co.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-white hover:underline"
+                >
+                  株式会社スタメン
+                </a>
+                <span className="text-sm text-white/50">2020/04 - 2023/01</span>
+              </div>
+              <p className="text-sm text-white/60">
+                エンゲージメントプラットフォーム「TUNAG」等を提供するスタートアップ
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Links</h2>
           <a
             href="https://github.com/takuyawww"
