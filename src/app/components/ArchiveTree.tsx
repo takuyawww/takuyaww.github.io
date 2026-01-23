@@ -77,7 +77,7 @@ export default function ArchiveTree({ groupedPosts }: ArchiveTreeProps) {
                               <Link
                                 key={post.date}
                                 href={getPostUrl(post.date)}
-                                className="block text-xs text-white/40 hover:text-accent truncate transition-colors"
+                                className="block text-xs text-white/40 hover:text-white truncate transition-colors"
                                 title={post.title}
                               >
                                 {post.date.split("-")[2]}日 - {post.title}
