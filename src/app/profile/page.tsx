@@ -6,7 +6,7 @@ export default function AboutPage() {
       <div className="space-y-4 sm:space-y-6">
         <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">About</h2>
-          <dl className="space-y-2 text-sky-300/70">
+          <dl className="space-y-2 text-white/70">
             <div className="flex gap-4">
               <dt className="text-white/50 w-24 shrink-0">名前</dt>
               <dd>若園 拓哉</dd>
@@ -24,7 +24,7 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Skills</h2>
-          <div className="space-y-1 text-sky-300/70">
+          <div className="space-y-1 text-white/70">
             <p>TypeScript / JavaScript</p>
             <p>React / Next.js</p>
           </div>
@@ -36,7 +36,7 @@ export default function AboutPage() {
             href="https://github.com/takuyawww"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sky-300/70 hover:text-sky-300 hover:underline"
+            className="text-white/70 hover:text-white hover:underline"
           >
             GitHub
           </a>

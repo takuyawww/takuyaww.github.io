@@ -55,10 +55,10 @@ export default function ArchivesPage() {
                           href={getPostUrl(post.date)}
                           className="group flex items-baseline gap-2 sm:gap-3"
                         >
-                          <span className="text-xs text-sky-400/50 font-mono shrink-0">
+                          <span className="text-xs text-white/50 font-mono shrink-0">
                             {post.date.split("-")[2]}
                           </span>
-                          <span className="text-sky-300/70 group-hover:text-sky-300 transition-colors text-sm sm:text-base">
+                          <span className="text-white/70 group-hover:text-white transition-colors text-sm sm:text-base">
                             {post.title}
                           </span>
                         </Link>
