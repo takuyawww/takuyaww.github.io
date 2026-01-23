@@ -11,7 +11,7 @@ export default function AboutPage() {
       <Image
         src={profileImage}
         alt="プロフィール画像"
-        className="w-1/2 h-auto rounded-lg mb-6 sm:mb-8"
+        className="w-full h-auto rounded mb-6 sm:mb-8"
       />
 
       <div className="space-y-4 sm:space-y-6">
