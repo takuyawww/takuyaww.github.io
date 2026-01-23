@@ -5,7 +5,10 @@ import PostList from "./components/PostList";
 
 // 投稿を年月でグループ化
 function groupPostsByYearMonth(posts: ReturnType<typeof getAllPosts>) {
-  const grouped: Record<string, Record<string, { title: string; date: string }[]>> = {};
+  const grouped: Record<
+    string,
+    Record<string, { title: string; date: string }[]>
+  > = {};
 
   posts.forEach((post) => {
     const [year, month] = post.date.split("-");
@@ -27,11 +30,15 @@ export default function Home() {
 
   return (
     <div className="py-8 sm:py-10">
-      <p className="text-white/50 text-sm mb-8">ジャンルを問わない個人の雑ブログです。</p>
+      <p className="text-white/50 text-sm mb-8">
+        細く長く投稿を頑張りたい所存です。
+      </p>
       <div className="flex gap-10">
         {/* メインコンテンツ */}
         <div className="flex-1">
-          <Suspense fallback={<div className="text-white/50">読み込み中...</div>}>
+          <Suspense
+            fallback={<div className="text-white/50">読み込み中...</div>}
+          >
             <PostList posts={posts} postsPerPage={10} />
           </Suspense>
         </div>
@@ -42,4 +49,3 @@ export default function Home() {
     </div>
   );
 }
-
