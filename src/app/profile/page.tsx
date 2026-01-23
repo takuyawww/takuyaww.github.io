@@ -73,6 +73,22 @@ export default function AboutPage() {
             <div>
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
                 <a
+                  href="https://graffer.jp/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white/90 hover:text-white hover:underline"
+                >
+                  株式会社グラファー
+                </a>
+                <span className="text-sm text-white/50">2023/02 - 現在</span>
+              </div>
+              <p className="text-sm text-white/60">
+                行政DX・生成AI活用支援を提供するGovTechスタートアップ
+              </p>
+            </div>
+            <div>
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
+                <a
                   href="https://stmn.co.jp/"
                   target="_blank"
                   rel="noopener noreferrer"
