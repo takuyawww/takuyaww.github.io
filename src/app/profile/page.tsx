@@ -1,4 +1,5 @@
 import Image from "next/image";
+import profileImage from "./profile.jpeg";
 
 export default function AboutPage() {
   return (
@@ -8,10 +9,8 @@ export default function AboutPage() {
       </h1>
 
       <Image
-        src="/profile.jpeg"
+        src={profileImage}
         alt="プロフィール画像"
-        width={400}
-        height={300}
         className="w-1/2 h-auto rounded-lg mb-6 sm:mb-8"
       />
 
