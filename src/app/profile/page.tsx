@@ -5,7 +5,7 @@ export default function AboutPage() {
 
       <div className="space-y-4 sm:space-y-6">
         <section>
-          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">About</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">基本情報</h2>
           <dl className="space-y-2 text-white/70">
             <div className="flex gap-4">
               <dt className="text-white/50 w-24 shrink-0">名前</dt>
@@ -23,7 +23,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Hobbies</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">趣味</h2>
           <div className="flex flex-wrap gap-2">
             <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">ランニング</span>
             <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">サウナ</span>
@@ -31,10 +31,10 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Skills</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">スキル</h2>
           <div className="space-y-3">
             <div>
-              <h3 className="text-sm text-white/50 mb-2">Languages</h3>
+              <h3 className="text-sm text-white/50 mb-2">言語</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Go</span>
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Ruby</span>
@@ -43,14 +43,14 @@ export default function AboutPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-2">Frameworks</h3>
+              <h3 className="text-sm text-white/50 mb-2">フレームワーク</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Ruby on Rails</span>
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">React</span>
               </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-2">Cloud / Infrastructure</h3>
+              <h3 className="text-sm text-white/50 mb-2">クラウド / インフラ</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">AWS</span>
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">Kubernetes</span>
@@ -58,7 +58,7 @@ export default function AboutPage() {
               </div>
             </div>
             <div>
-              <h3 className="text-sm text-white/50 mb-2">Databases</h3>
+              <h3 className="text-sm text-white/50 mb-2">データベース</h3>
               <div className="flex flex-wrap gap-2">
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">MySQL</span>
                 <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">PostgreSQL</span>
@@ -68,37 +68,33 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Work Experience</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">職歴</h2>
           <div className="space-y-4">
             <div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <a
-                  href="https://graffer.jp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/90 hover:text-white hover:underline"
-                >
-                  株式会社グラファー
-                </a>
-                <span className="text-sm text-white/50">2023/02 - 現在</span>
-              </div>
-              <p className="text-sm text-white/60">
+              <a
+                href="https://graffer.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-white hover:underline"
+              >
+                株式会社グラファー
+              </a>
+              <span className="text-sm text-white/50 ml-2">2023/02 - 現在</span>
+              <p className="text-sm text-white/60 mt-1">
                 行政DX・生成AI活用支援を提供するGovTechスタートアップ
               </p>
             </div>
             <div>
-              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-1">
-                <a
-                  href="https://stmn.co.jp/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white/90 hover:text-white hover:underline"
-                >
-                  株式会社スタメン
-                </a>
-                <span className="text-sm text-white/50">2020/04 - 2023/01</span>
-              </div>
-              <p className="text-sm text-white/60">
+              <a
+                href="https://stmn.co.jp/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white/90 hover:text-white hover:underline"
+              >
+                株式会社スタメン
+              </a>
+              <span className="text-sm text-white/50 ml-2">2020/04 - 2023/01</span>
+              <p className="text-sm text-white/60 mt-1">
                 エンゲージメントプラットフォーム「TUNAG」等を提供するスタートアップ
               </p>
             </div>
@@ -106,7 +102,7 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Links</h2>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">リンク</h2>
           <a
             href="https://github.com/takuyawww"
             target="_blank"
