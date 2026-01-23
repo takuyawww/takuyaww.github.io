@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { getAllPosts } from "@/lib/posts";
 import ArchiveTree from "./components/ArchiveTree";
 import PostList from "./components/PostList";
@@ -29,7 +30,9 @@ export default function Home() {
       <div className="flex gap-10">
         {/* メインコンテンツ */}
         <div className="flex-1">
-          <PostList posts={posts} postsPerPage={10} />
+          <Suspense fallback={<div className="text-white/50">読み込み中...</div>}>
+            <PostList posts={posts} postsPerPage={10} />
+          </Suspense>
         </div>
 
         {/* 右サイドバー - 年月ツリー */}
