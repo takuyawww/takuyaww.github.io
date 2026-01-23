@@ -11,13 +11,13 @@ export default function Header() {
           <nav className="flex items-center gap-6">
             <Link
               href="/profile"
-              className="text-sm text-sky-300/70 hover:text-sky-300 transition-colors duration-200"
+              className="text-sm text-white/60 hover:text-white transition-colors duration-200"
             >
               プロフィール
             </Link>
             <Link
               href="/archives"
-              className="text-sm text-sky-300/70 hover:text-sky-300 transition-colors duration-200"
+              className="text-sm text-white/60 hover:text-white transition-colors duration-200"
             >
               アーカイブ
             </Link>
