@@ -27,6 +27,7 @@ export default function Home() {
 
   return (
     <div className="py-8 sm:py-10">
+      <p className="text-white/50 text-sm mb-8">ジャンルを問わない個人の雑ブログです。</p>
       <div className="flex gap-10">
         {/* メインコンテンツ */}
         <div className="flex-1">
