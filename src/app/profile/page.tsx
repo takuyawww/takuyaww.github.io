@@ -24,9 +24,23 @@ export default function AboutPage() {
 
         <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Skills</h2>
-          <div className="space-y-1 text-white/70">
-            <p>TypeScript / JavaScript</p>
-            <p>React / Next.js</p>
+          <div className="space-y-3 text-white/70">
+            <div>
+              <h3 className="text-sm text-white/50 mb-1">Languages</h3>
+              <p>Go / Ruby / TypeScript / JavaScript</p>
+            </div>
+            <div>
+              <h3 className="text-sm text-white/50 mb-1">Frameworks</h3>
+              <p>Ruby on Rails / React</p>
+            </div>
+            <div>
+              <h3 className="text-sm text-white/50 mb-1">Cloud / Infrastructure</h3>
+              <p>AWS / Kubernetes / Terraform</p>
+            </div>
+            <div>
+              <h3 className="text-sm text-white/50 mb-1">Databases</h3>
+              <p>MySQL / PostgreSQL</p>
+            </div>
           </div>
         </section>
 
