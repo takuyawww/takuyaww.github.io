@@ -25,7 +25,12 @@ function getPostUrl(date: string): string {
 
 export default function ArchiveTree({ groupedPosts }: ArchiveTreeProps) {
   const years = Object.keys(groupedPosts).sort((a, b) => b.localeCompare(a));
-  const [expandedMonths, setExpandedMonths] = useState<Set<string>>(new Set());
+
+  // 全ての月を展開状態で初期化
+  const allMonthKeys = years.flatMap((year) =>
+    Object.keys(groupedPosts[year]).map((month) => `${year}-${month}`)
+  );
+  const [expandedMonths, setExpandedMonths] = useState<Set<string>>(new Set(allMonthKeys));
 
   const toggleMonth = (key: string) => {
     setExpandedMonths((prev) => {
