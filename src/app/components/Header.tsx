@@ -10,10 +10,18 @@ export default function Header() {
           </Link>
           <nav className="flex items-center gap-6">
             <Link
-              href="/archives"
-              className="text-sm text-white/60 hover:text-white transition-colors duration-200"
+              href="/profile"
+              className="flex items-center gap-1.5 text-sm text-white/60 hover:text-white transition-colors duration-200"
             >
-              Archives
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+              プロフィール
+            </Link>
+            <Link
+              href="/archives"
+              className="flex items-center gap-1.5 text-sm text-white/60 hover:text-white transition-colors duration-200"
+            >
+              <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+              アーカイブ
             </Link>
             <a
               href="https://github.com/takuyawww"

@@ -32,7 +32,7 @@ export default function ArchivesPage() {
 
   return (
     <div className="py-8 sm:py-10 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-white mb-8">Archives</h1>
+      <h1 className="text-2xl font-bold text-white mb-8">アーカイブ</h1>
 
       <div className="space-y-8">
         {years.map((year) => (

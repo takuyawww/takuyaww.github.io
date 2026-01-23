@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useSearchParams } from "next/navigation";
 
 interface Post {
   title: string;
@@ -20,7 +20,8 @@ function getPostUrl(date: string): string {
 }
 
 export default function PostList({ posts, postsPerPage = 10 }: PostListProps) {
-  const [currentPage, setCurrentPage] = useState(1);
+  const searchParams = useSearchParams();
+  const currentPage = Number(searchParams.get("page")) || 1;
 
   const totalPages = Math.ceil(posts.length / postsPerPage);
   const startIndex = (currentPage - 1) * postsPerPage;
@@ -52,37 +53,43 @@ export default function PostList({ posts, postsPerPage = 10 }: PostListProps) {
 
       {totalPages > 1 && (
         <nav className="flex items-center justify-center gap-4 mt-12">
-          <button
-            onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-            disabled={currentPage === 1}
-            className="px-4 py-2 text-sm text-white/60 hover:text-white disabled:text-white/20 disabled:cursor-not-allowed transition-colors"
-          >
-            ← Prev
-          </button>
+          {currentPage > 1 ? (
+            <Link
+              href={currentPage === 2 ? "/" : `/?page=${currentPage - 1}`}
+              className="px-4 py-2 text-sm text-white/60 hover:text-white transition-colors"
+            >
+              ← 前へ
+            </Link>
+          ) : (
+            <span className="px-4 py-2 text-sm text-white/20">← 前へ</span>
+          )}
 
           <div className="flex items-center gap-2">
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
-              <button
+              <Link
                 key={page}
-                onClick={() => setCurrentPage(page)}
-                className={`w-8 h-8 text-sm rounded transition-colors ${
+                href={page === 1 ? "/" : `/?page=${page}`}
+                className={`w-8 h-8 text-sm rounded flex items-center justify-center transition-colors ${
                   currentPage === page
                     ? "bg-accent text-white"
                     : "text-white/60 hover:text-white hover:bg-white/10"
                 }`}
               >
                 {page}
-              </button>
+              </Link>
             ))}
           </div>
 
-          <button
-            onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-            disabled={currentPage === totalPages}
-            className="px-4 py-2 text-sm text-white/60 hover:text-white disabled:text-white/20 disabled:cursor-not-allowed transition-colors"
-          >
-            Next →
-          </button>
+          {currentPage < totalPages ? (
+            <Link
+              href={`/?page=${currentPage + 1}`}
+              className="px-4 py-2 text-sm text-white/60 hover:text-white transition-colors"
+            >
+              次へ →
+            </Link>
+          ) : (
+            <span className="px-4 py-2 text-sm text-white/20">次へ →</span>
+          )}
         </nav>
       )}
 
