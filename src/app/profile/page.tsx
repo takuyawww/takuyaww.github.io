@@ -1,18 +1,9 @@
-import Image from "next/image";
-import profileImage from "./profile.jpeg";
-
 export default function AboutPage() {
   return (
     <div className="py-6 sm:py-10 max-w-3xl mx-auto px-2 sm:px-0">
       <h1 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">
         プロフィール
       </h1>
-
-      <Image
-        src={profileImage}
-        alt="プロフィール画像"
-        className="w-full h-auto rounded mb-6 sm:mb-8"
-      />
 
       <div className="space-y-4 sm:space-y-6">
         <section>
@@ -44,8 +35,9 @@ export default function AboutPage() {
             趣味
           </h2>
           <ul className="space-y-1 text-white/70">
-            <li>🏃 ランニング</li>
-            <li>🧖 サウナ</li>
+            <li>ランニング: 毎日3km目標で走ってます。</li>
+            <li>サウナ: 1回目の外気浴が好き。</li>
+            <li>サカナクションが好きです。</li>
           </ul>
         </section>
 
