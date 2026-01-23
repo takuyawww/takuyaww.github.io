@@ -8,7 +8,7 @@ export default function AboutPage() {
       </h1>
 
       <Image
-        src="/images/profile.jpeg"
+        src="/profile.jpeg"
         alt="プロフィール画像"
         width={400}
         height={300}
