@@ -34,11 +34,20 @@ export default function AboutPage() {
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">
             趣味
           </h2>
-          <ul className="space-y-1 text-white/70">
-            <li>ランニング: 毎日3km目標で走ってます。</li>
-            <li>サウナ: 1回目の外気浴が好き。</li>
-            <li>サカナクションが好きです。</li>
-          </ul>
+          <dl className="space-y-2 text-white/70">
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">ランニング</dt>
+              <dd>毎日3km目標で走ってます。</dd>
+            </div>
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">サウナ</dt>
+              <dd>特に1回目の外気浴が好きです。</dd>
+            </div>
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">音楽</dt>
+              <dd>サカナクションが好きです。</dd>
+            </div>
+          </dl>
         </section>
 
         <section>
@@ -719,26 +728,26 @@ export default function AboutPage() {
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">
             リンク
           </h2>
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-wrap gap-3">
             <a
               href="https://github.com/takuyawww"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/70 hover:text-white hover:underline"
+              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
             >
-              GitHub
+              GitHub →
             </a>
             <a
               href="#"
-              className="text-white/70 hover:text-white hover:underline"
+              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
             >
-              職務経歴書
+              職務経歴書 →
             </a>
             <a
               href="#"
-              className="text-white/70 hover:text-white hover:underline"
+              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
             >
-              履歴書
+              履歴書 →
             </a>
           </div>
         </section>
