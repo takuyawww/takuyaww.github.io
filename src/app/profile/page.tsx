@@ -728,26 +728,26 @@ export default function AboutPage() {
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">
             リンク
           </h2>
-          <div className="flex flex-wrap gap-3">
+          <div className="flex flex-col gap-2">
             <a
               href="https://github.com/takuyawww"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white hover:underline"
             >
-              GitHub →
+              ◼︎ GitHub
             </a>
             <a
               href="#"
-              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white hover:underline"
             >
-              職務経歴書 →
+              ◼︎ 職務経歴書
             </a>
             <a
               href="#"
-              className="px-4 py-2 bg-white/10 rounded text-white/80 hover:bg-white/20 hover:text-white transition-colors"
+              className="text-white/70 hover:text-white hover:underline"
             >
-              履歴書 →
+              ◼︎ 履歴書
             </a>
           </div>
         </section>
