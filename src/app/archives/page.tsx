@@ -31,40 +31,39 @@ export default function ArchivesPage() {
   const years = Object.keys(groupedPosts).sort((a, b) => b.localeCompare(a));
 
   return (
-    <div className="py-8 sm:py-10 max-w-3xl mx-auto">
-      <h1 className="text-2xl font-bold text-white mb-8">アーカイブ</h1>
+    <div className="py-6 sm:py-10 max-w-3xl mx-auto px-2 sm:px-0">
+      <h1 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">アーカイブ</h1>
 
-      <div className="space-y-8">
+      <div className="space-y-5 sm:space-y-8">
         {years.map((year) => (
           <section key={year}>
-            <h2 className="text-lg font-semibold text-white/80 mb-4 font-mono">
+            <h2 className="text-base sm:text-lg font-semibold text-white/80 mb-3 sm:mb-4 font-mono">
               {year}
             </h2>
-            <div className="space-y-6 ml-4 border-l border-white/20 pl-6">
+            <div className="space-y-4 sm:space-y-6 ml-2 sm:ml-4 border-l border-white/20 pl-3 sm:pl-6">
               {Object.keys(groupedPosts[year])
                 .sort((a, b) => b.localeCompare(a))
                 .map((month) => (
                   <div key={month}>
-                    <h3 className="text-sm font-medium text-white/60 mb-3 font-mono">
+                    <h3 className="text-sm font-medium text-white/60 mb-2 sm:mb-3 font-mono">
                       {month}月
                     </h3>
-                    <ul className="space-y-2">
+                    <div className="space-y-1.5 sm:space-y-2">
                       {groupedPosts[year][month].map((post) => (
-                        <li key={post.date}>
-                          <Link
-                            href={getPostUrl(post.date)}
-                            className="group flex items-baseline gap-3"
-                          >
-                            <span className="text-xs text-white/40 font-mono shrink-0">
-                              {post.date.split("-")[2]}
-                            </span>
-                            <span className="text-white/70 group-hover:text-accent transition-colors">
-                              {post.title}
-                            </span>
-                          </Link>
-                        </li>
+                        <Link
+                          key={post.date}
+                          href={getPostUrl(post.date)}
+                          className="group flex items-baseline gap-2 sm:gap-3"
+                        >
+                          <span className="text-xs text-sky-400/50 font-mono shrink-0">
+                            {post.date.split("-")[2]}
+                          </span>
+                          <span className="text-sky-300/70 group-hover:text-sky-300 transition-colors text-sm sm:text-base">
+                            {post.title}
+                          </span>
+                        </Link>
                       ))}
-                    </ul>
+                    </div>
                   </div>
                 ))}
             </div>
