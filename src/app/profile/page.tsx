@@ -6,7 +6,20 @@ export default function AboutPage() {
       <div className="space-y-4 sm:space-y-6">
         <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">About</h2>
-          <p className="text-sky-300/70">takuyawww</p>
+          <dl className="space-y-2 text-sky-300/70">
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">名前</dt>
+              <dd>若園 拓哉</dd>
+            </div>
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">生年月日</dt>
+              <dd>1995年11月1日</dd>
+            </div>
+            <div className="flex gap-4">
+              <dt className="text-white/50 w-24 shrink-0">年齢</dt>
+              <dd>30歳</dd>
+            </div>
+          </dl>
         </section>
 
         <section>
