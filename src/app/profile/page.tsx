@@ -23,6 +23,14 @@ export default function AboutPage() {
         </section>
 
         <section>
+          <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Hobbies</h2>
+          <div className="flex flex-wrap gap-2">
+            <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">ランニング</span>
+            <span className="px-2 py-1 bg-white/10 rounded text-sm text-white/70">サウナ</span>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-base sm:text-lg font-semibold text-white mb-2 sm:mb-3">Skills</h2>
           <div className="space-y-3">
             <div>
