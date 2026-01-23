@@ -21,7 +21,7 @@ export default function AboutPage() {
             </div>
             <div className="flex gap-4">
               <dt className="text-white/50 w-24 shrink-0">居住地</dt>
-              <dd>日本/福岡 <span className="text-white/40">(まもなく引越し予定...)</span></dd>
+              <dd>日本/福岡 <span className="text-white/40">(まもなく引越し予定)</span></dd>
             </div>
           </dl>
         </section>
