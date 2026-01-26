@@ -1,6 +1,39 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getAllPosts, getPostWithHtml } from "@/lib/posts";
+import type { Metadata } from "next";
+import { getAllPosts, getPostByDate, getPostWithHtml } from "@/lib/posts";
+
+type Props = {
+  params: Promise<{ year: string; month: string; day: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { year, month, day } = await params;
+  const post = getPostByDate(year, month, day);
+
+  if (!post) {
+    return {};
+  }
+
+  const title = post.title;
+  const description = post.excerpt || "";
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      publishedTime: post.date,
+    },
+    twitter: {
+      card: "summary",
+      title,
+      description,
+    },
+  };
+}
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
