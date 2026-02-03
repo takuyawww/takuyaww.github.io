@@ -25,6 +25,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              document.addEventListener('error', function(e) {
+                if (e.target && e.target.tagName === 'IMG' && e.target.closest('.link-card-image')) {
+                  e.target.style.display = 'none';
+                }
+              }, true);
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-mainbg text-white`}
       >

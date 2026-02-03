@@ -86,6 +86,7 @@ export default async function PostPage({
       <div className="prose prose-invert max-w-none">
         <div
           className="text-white/70 leading-relaxed [&_h1]:text-xl [&_h1]:font-bold [&_h1]:mt-4 [&_h1]:mb-2 [&_h1]:text-white [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mt-4 [&_h2]:mb-2 [&_h2]:text-white [&_h3]:text-base [&_h3]:font-semibold [&_h3]:mt-3 [&_h3]:mb-2 [&_h3]:text-white [&_p]:mb-3 [&_p]:leading-relaxed [&_p]:text-white/70 [&_a]:text-blue-400 [&_a]:underline [&_a]:hover:text-blue-300 [&_a]:transition-colors [&_code:not(pre_code)]:bg-white/10 [&_code:not(pre_code)]:text-white [&_code:not(pre_code)]:px-1.5 [&_code:not(pre_code)]:py-0.5 [&_code:not(pre_code)]:rounded [&_code:not(pre_code)]:text-sm [&_pre]:my-3 [&_pre]:overflow-x-auto [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1 [&_ul]:my-3 [&_li]:text-white/70"
+          suppressHydrationWarning
           dangerouslySetInnerHTML={{ __html: post.contentHtml || post.content }}
         />
       </div>
