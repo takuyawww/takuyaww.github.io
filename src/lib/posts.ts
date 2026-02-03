@@ -1,10 +1,12 @@
 import fs from "fs";
 import path from "path";
 import { remark } from "remark";
+import remarkGfm from "remark-gfm";
 import remarkRehype from "remark-rehype";
 import rehypeHighlight from "rehype-highlight";
 import rehypeExternalLinks from "rehype-external-links";
 import rehypeStringify from "rehype-stringify";
+import { rehypeLinkCard } from "./rehype-link-card";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
@@ -125,7 +127,9 @@ export async function getPostWithHtml(
 
   // MarkdownをHTMLに変換（シンタックスハイライト付き）
   const processedContent = await remark()
+    .use(remarkGfm)
     .use(remarkRehype)
+    .use(rehypeLinkCard)
     .use(rehypeHighlight)
     .use(rehypeExternalLinks, {
       target: "_blank",

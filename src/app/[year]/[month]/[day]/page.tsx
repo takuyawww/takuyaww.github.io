@@ -15,14 +15,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     return {};
   }
 
-  const title = post.title;
+  const title = `takuyawww - ${post.title}`;
   const description = post.excerpt || "";
 
   return {
     title,
     description,
     openGraph: {
-      title,
+      title: post.title,
       description,
       type: "article",
       publishedTime: post.date,
@@ -37,13 +37,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export async function generateStaticParams() {
   const posts = getAllPosts();
-  
+
   return posts.map((post) => {
     const [year, month, day] = post.date.split("-");
     return {
       year,
       month, // 先頭の0を含む（例: "01"）
-      day,   // 先頭の0を含む（例: "15"）
+      day, // 先頭の0を含む（例: "15"）
     };
   });
 }
@@ -54,7 +54,7 @@ export default async function PostPage({
   params: Promise<{ year: string; month: string; day: string }>;
 }) {
   const { year, month, day } = await params;
-  
+
   const post = await getPostWithHtml(year, month, day);
 
   if (!post) {
@@ -67,7 +67,7 @@ export default async function PostPage({
         href="/"
         className="inline-flex items-center text-sm text-white/50 hover:text-white mb-6 transition-colors duration-200"
       >
-        ← Back to blog
+        ← 戻る
       </Link>
 
       <header className="mb-6">
