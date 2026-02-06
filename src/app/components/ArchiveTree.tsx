@@ -82,10 +82,10 @@ export default function ArchiveTree({ groupedPosts }: ArchiveTreeProps) {
                               <Link
                                 key={post.date}
                                 href={getPostUrl(post.date)}
-                                className="block text-xs text-white/40 hover:text-white truncate transition-colors"
-                                title={post.title}
+                                className="flex text-xs text-white/40 hover:text-white transition-colors leading-relaxed"
                               >
-                                {post.date.split("-")[2]}日 - {post.title}
+                                <span className="shrink-0">{post.date.split("-")[2]}日 -&nbsp;</span>
+                                <span>{post.title}</span>
                               </Link>
                             ))}
                           </div>

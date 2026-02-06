@@ -81,6 +81,18 @@ export default async function PostPage({
             day: "numeric",
           })}
         </time>
+        {post.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-2 py-0.5 rounded bg-white/10 text-white/60"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </header>
 
       <div className="prose prose-invert max-w-none">

@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 interface Post {
   title: string;
   date: string;
+  tags: string[];
   excerpt?: string;
 }
 
@@ -44,9 +45,18 @@ export default function PostList({ posts, postsPerPage = 10 }: PostListProps) {
                 day: "numeric",
               })}
             </time>
-            <p className="text-sm text-white/60 leading-relaxed">
-              {post.excerpt}
-            </p>
+            {post.tags.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {post.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs px-2 py-0.5 rounded bg-white/10 text-white/60"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
           </article>
         ))}
       </div>
