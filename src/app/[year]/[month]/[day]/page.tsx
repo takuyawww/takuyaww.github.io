@@ -48,6 +48,11 @@ export async function generateStaticParams() {
   });
 }
 
+function getPostUrl(date: string): string {
+  const [year, month, day] = date.split("-");
+  return `/${year}/${month}/${day}`;
+}
+
 export default async function PostPage({
   params,
 }: {
@@ -61,15 +66,14 @@ export default async function PostPage({
     notFound();
   }
 
+  // 前後の記事を取得
+  const allPosts = getAllPosts(); // 新しい順にソート済み
+  const currentIndex = allPosts.findIndex((p) => p.date === post.date);
+  const newerPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+  const olderPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+
   return (
     <article className="py-8 sm:py-10">
-      <Link
-        href="/"
-        className="inline-flex items-center text-sm text-white/50 hover:text-white mb-6 transition-colors duration-200"
-      >
-        ← 戻る
-      </Link>
-
       <header className="mb-6">
         <h1 className="text-xl sm:text-2xl font-bold text-white mb-2 leading-tight">
           {post.title}
@@ -102,6 +106,38 @@ export default async function PostPage({
           dangerouslySetInnerHTML={{ __html: post.contentHtml || post.content }}
         />
       </div>
+
+      {/* 前後の記事ナビゲーション */}
+      <nav className="mt-12 pt-8 border-t border-white/10">
+        <div className="flex justify-between gap-4">
+          <div className="flex-1">
+            {olderPost && (
+              <Link
+                href={getPostUrl(olderPost.date)}
+                className="block group"
+              >
+                <span className="text-xs text-white/40">前の記事</span>
+                <span className="block text-sm text-white/70 group-hover:text-white transition-colors mt-1">
+                  {olderPost.title}
+                </span>
+              </Link>
+            )}
+          </div>
+          <div className="flex-1 text-right">
+            {newerPost && (
+              <Link
+                href={getPostUrl(newerPost.date)}
+                className="block group"
+              >
+                <span className="text-xs text-white/40">次の記事</span>
+                <span className="block text-sm text-white/70 group-hover:text-white transition-colors mt-1">
+                  {newerPost.title}
+                </span>
+              </Link>
+            )}
+          </div>
+        </div>
+      </nav>
     </article>
   );
 }
